@@ -116,14 +116,16 @@
       </ul>
     </div>
     <div class="tech" id="contact">
-        <h2>Contact Me</h2>
+  <h2>Contact Me</h2>
   <form id="contactForm">
     <input type="text" name="name" placeholder="이름" required><br>
     <input type="email" name="email" placeholder="이메일" required><br>
     <textarea name="message" placeholder="메시지" required></textarea><br>
     <button type="submit">보내기</button>
+    <button type="button" id="discordButton" style="margin-left: 1rem; background: #7289da;">📩 디스코드로 보내기</button>
   </form>
-      <script type="module">
+
+  <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
     import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
@@ -141,8 +143,9 @@
     const db = getFirestore(app);
 
     const form = document.getElementById("contactForm");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    const discordButton = document.getElementById("discordButton");
+
+    async function handleSubmit(sendToDiscord = false) {
       const name = form.name.value;
       const email = form.email.value;
       const message = form.message.value;
@@ -154,12 +157,36 @@
           message,
           timestamp: new Date()
         });
-        alert("메시지가 성공적으로 전송되었습니다!");
+
+        if (sendToDiscord) {
+          await fetch("https://discord.com/api/webhooks/1374454273185808395/rZDW9lU3B7Tutw01YWIJLIQSrVtKpxtd3RHK1E7a-zWj8ja17L_5yHhl52BSMKMKlDQD", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              content: `📨 [Portfolio Contact]\n이름: ${name}\n이메일: ${email}\n메시지: ${message}`
+            })
+          });
+          alert("디스코드로 메시지가 전송되었습니다!");
+        } else {
+          alert("메시지가 Firebase에 전송되었습니다!");
+        }
+
         form.reset();
       } catch (err) {
-        console.error("오류 발생:", err);
+        console.error("전송 오류:", err);
         alert("전송에 실패했습니다.");
       }
+    }
+
+    // 기본 submit (Firebase만)
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      await handleSubmit(false);
+    });
+
+    // 디스코드 전송 버튼 클릭 시 (Firebase + Discord)
+    discordButton.addEventListener("click", async () => {
+      await handleSubmit(true);
     });
   </script>
     </div>
