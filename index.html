@@ -116,13 +116,52 @@
       </ul>
     </div>
     <div class="tech" id="contact">
-      <h2>연락하기</h2>
-      <form onsubmit="event.preventDefault(); alert('메시지가 전송되었습니다!');">
-        <input type="text" placeholder="이름" required />
-        <input type="email" placeholder="이메일" required />
-        <textarea placeholder="메시지" rows="5" required></textarea>
-        <button type="submit">보내기</button>
-      </form>
+        <h2>Contact Me</h2>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="이름" required><br>
+    <input type="email" name="email" placeholder="이메일" required><br>
+    <textarea name="message" placeholder="메시지" required></textarea><br>
+    <button type="submit">보내기</button>
+  </form>
+      <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDIJqcl2HRdQqtiyHZMxZo0cr9lEFLokqk",
+      authDomain: "final-portfolio-f6616.firebaseapp.com",
+      projectId: "final-portfolio-f6616",
+      storageBucket: "final-portfolio-f6616.firebasestorage.app",
+      messagingSenderId: "1057713911372",
+      appId: "1:1057713911372:web:35ccbdb524b00ac37e66e9",
+      measurementId: "G-3ZHMRF1PZR"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = form.name.value;
+      const email = form.email.value;
+      const message = form.message.value;
+
+      try {
+        await addDoc(collection(db, "messages"), {
+          name,
+          email,
+          message,
+          timestamp: new Date()
+        });
+        alert("메시지가 성공적으로 전송되었습니다!");
+        form.reset();
+      } catch (err) {
+        console.error("오류 발생:", err);
+        alert("전송에 실패했습니다.");
+      }
+    });
+  </script>
     </div>
   </div>
 </body>
