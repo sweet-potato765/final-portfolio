@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>개발자 김은석의 포트폴리오</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf5;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    .robot-img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-top: 1rem;
+    }
+    p.sub {
+      font-size: 0.95rem;
+      color: #888;
+    }
+    p.desc {
+      font-size: 1.1rem;
+      margin: 1.5rem 0;
+      line-height: 1.6;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .buttons a {
+      padding: 0.7rem 1.5rem;
+      border: 1px solid #333;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .tech {
+      text-align: left;
+      margin-top: 2rem;
+    }
+    .tech h2 {
+      font-size: 1.2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+    .tech ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 0.8rem 2rem;
+      border: none;
+      background: #333;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>개발자 김은석의 포트폴리오</h1>
+    <p class="sub">Wed May 14 2025</p>
+    <img src="robot.png" class="robot-img" alt="귀여운 요리 로봇" />
+    <p class="desc">
+      코드는 내 손맛, 앱은 내 요리.<br />
+      사람들의 삶에 향기한 편리함을 더하는 개발자, <strong>김은석</strong>입니다.
+    </p>
+    <div class="buttons">
+      <a href="https://github.com/username/ybus" target="_blank">GitHub</a>
+      <a href="#contact">연락하기</a>
+    </div>
+    <div class="tech">
+      <h2>기술 스택</h2>
+      <ul>
+        <li><strong>Languages:</strong> Python, HTML/CSS</li>
+        <li><strong>Frameworks:</strong> Flutter</li>
+        <li><strong>Skills:</strong> Cooking</li>
+      </ul>
+    </div>
+    <div class="tech">
+      <h2>프로젝트</h2>
+      <ul>
+        <li>
+          <strong>YBUS</strong><br />
+          재능대학교 셔틀버스 위치를 실시간으로 확인할 수 있는 웹 앱<br />
+          <strong>기술 스택:</strong> Flutter, Firebase<br />
+          🔗 <a href="https://github.com/username/ybus" target="_blank">GitHub</a><br />
+          🚀 <a href="https://ybus.web.app" target="_blank">배포 링크</a>
+        </li>
+      </ul>
+    </div>
+    <div class="tech" id="contact">
+      <h2>연락하기</h2>
+      <form onsubmit="event.preventDefault(); alert('메시지가 전송되었습니다!');">
+        <input type="text" placeholder="이름" required />
+        <input type="email" placeholder="이메일" required />
+        <textarea placeholder="메시지" rows="5" required></textarea>
+        <button type="submit">보내기</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
