@@ -1,219 +1,172 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>개발자 김은석의 포트폴리오</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김은석 포트폴리오</title>
+
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fffaf5;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f6fa;
       color: #333;
     }
+
     .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    header h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
       text-align: center;
     }
-    .robot-img {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+    .card h2 {
+      font-size: 28px;
+      margin-bottom: 5px;
     }
-    h1 {
-      font-size: 1.8rem;
-      margin-top: 1rem;
+
+    .subtitle {
+      font-size: 15px;
+      color: #777;
+      margin-bottom: 20px;
     }
-    p.sub {
-      font-size: 0.95rem;
-      color: #888;
+
+    .card img {
+      width: 220px;
+      border-radius: 15px;
+      margin-bottom: 25px;
     }
-    p.desc {
-      font-size: 1.1rem;
-      margin: 1.5rem 0;
-      line-height: 1.6;
+
+    .card p {
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 20px;
     }
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
+
+    .stack {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 25px;
     }
-    .buttons a {
-      padding: 0.7rem 1.5rem;
-      border: 1px solid #333;
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #4f46e5;
+      color: #fff;
       border-radius: 30px;
       text-decoration: none;
-      color: #333;
-      font-weight: bold;
+      font-size: 14px;
     }
-    .tech {
-      text-align: left;
-      margin-top: 2rem;
+
+    .button:hover {
+      background: #3730a3;
     }
-    .tech h2 {
-      font-size: 1.2rem;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
-    .tech ul {
-      list-style: none;
-      padding: 0;
-      line-height: 1.8;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    form button {
-      padding: 0.8rem 2rem;
-      border: none;
-      background: #333;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
+
+    footer {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <h1>개발자 김은석의 포트폴리오</h1>
-    <img src="robot.png" alt="귀여운 요리 로봇" width="200">
-    <p class="desc">
-      코드는 내 손맛, 앱은 내 요리.<br />
-      사람들의 삶에 향기한 편리함을 더하는 개발자, <strong>김은석</strong>입니다.
-    </p>
-    <div class="buttons">
-      <a href="https://github.com/username/ybus" target="_blank">GitHub</a>
-      <a href="#contact">연락하기</a>
-    </div>
-    <div class="tech">
-      <h2>기술 스택</h2>
-      <ul>
-        <li><strong>Languages:</strong> Python, HTML/CSS</li>
-        <li><strong>Frameworks:</strong> Flutter</li>
-        <li><strong>Skills:</strong> Cooking</li>
-      </ul>
-    </div>
-    <div class="tech">
 
-      <section style="margin-top:60px; text-align:center;">
-  <h2 style="font-size:32px; margin-bottom:10px;">YBUS</h2>
+    <!-- 헤더 -->
+    <header>
+      <h1>김은석</h1>
+      <p>Flutter · Firebase 기반 앱 개발자 포트폴리오</p>
+    </header>
 
-  <p style="max-width:700px; margin:0 auto 30px; line-height:1.8; font-size:16px;">
-    YBUS는 <strong>재능대학교 셔틀버스 위치를 실시간으로 확인할 수 있는 웹 서비스</strong>입니다.<br><br>
+    <!-- 프로젝트 섹션 -->
+    <section class="projects">
 
-    Firebase를 활용해 버스 위치를 실시간으로 갱신하며,
-    학생들이 <strong>버스 도착 시간을 직관적으로 확인</strong>할 수 있도록 설계했습니다.<br><br>
+      <!-- YBUS 카드 -->
+      <div class="card">
+        <h2>YBUS</h2>
+        <div class="subtitle">셔틀버스 실시간 위치 서비스</div>
+        <img src="Ybus.PNG" alt="YBUS 이미지" />
+        <p>
+          재능대학교 셔틀버스의 위치를<br />
+          실시간으로 확인할 수 있는 웹 서비스입니다.<br /><br />
+          Firebase를 활용해 위치 정보를 갱신하고,
+          Flutter Web으로 제작해 모바일과 PC 모두에서
+          사용할 수 있도록 구현했습니다.
+        </p>
+        <div class="stack">Flutter · Firebase · Web</div>
+        <a class="button" href="https://ybus.web.app" target="_blank">사이트 바로가기</a>
+      </div>
 
-    Flutter 기반 웹 앱으로 제작되어
-    모바일과 PC 어디서든 쉽게 사용할 수 있습니다.
-  </p>
+      <!-- Re: Memory 카드 -->
+      <div class="card">
+        <h2>Re: Memory</h2>
+        <div class="subtitle">AI 스토리 시뮬레이션 게임</div>
+        <img src="memory_qr.PNG" alt="Re Memory QR" />
+        <p>
+          AI와 함께 이야기를 만들어가는<br />
+          스토리 시뮬레이션 게임입니다.<br /><br />
+          플레이어의 말투와 선택에 따라
+          캐릭터 호감도와 엔딩이 달라지며,
+          매번 새로운 관계가 만들어집니다.
+        </p>
+        <div class="stack">AI · Narrative · Simulation</div>
+        <a class="button" href="#">플레이 페이지</a>
+      </div>
 
-  <img src="robot.png" alt="YBUS Image"
-       style="width:220px; border-radius:12px;">
-</section>
-      
-      <section style="margin-top:60px; text-align:center;">
-  <h2 style="font-size:32px; margin-bottom:10px;">Re: Memory</h2>
+      <!-- 개인 프로젝트 카드 (가상) -->
+      <div class="card">
+        <h2>DailyCook</h2>
+        <div class="subtitle">AI 기반 요리 추천 앱 (개인 프로젝트)</div>
+        <img src="https://via.placeholder.com/220x220?text=DailyCook" alt="DailyCook 이미지" />
+        <p>
+          사용자의 재료와 취향을 기반으로<br />
+          오늘의 요리를 추천해주는 개인 프로젝트입니다.<br /><br />
+          간단한 질문을 통해 상황을 파악하고,
+          AI가 레시피와 조리 순서를 제안하도록
+          설계했습니다.
+        </p>
+        <div class="stack">AI · Flutter · Firebase</div>
+        <a class="button" href="#">프로젝트 소개</a>
+      </div>
 
-  <p style="max-width:700px; margin:0 auto 30px; line-height:1.8; font-size:16px;">
-    이 프로젝트는 <strong>AI와 같이 이야기를 만들어가는 스토리 시뮬레이션 게임</strong>이에요.<br><br>
+    </section>
 
-    플레이어가 말하는 내용과 분위기에 따라 캐릭터 호감도가 바뀌고,
-    엔딩도 달라져요.<br><br>
+    <!-- 푸터 -->
+    <footer>
+      © 2025 김은석 Portfolio
+    </footer>
 
-    같은 상황에서도 매번 다른 대사가 나오기 때문에
-    <strong>두 번, 세 번 해도 새로운 관계가 만들어지는</strong> 구조입니다.
-  </p>
-
-  <img src="memory_qr.PNG" alt="Re Memory QR"
-       style="width:220px; border-radius:12px;">
-</section>
-      
-    </div>
-    <div class="tech" id="contact">
-  <h2>Contact Me</h2>
-  <form id="contactForm">
-    <input type="text" name="name" placeholder="이름" required><br>
-    <input type="email" name="email" placeholder="이메일" required><br>
-    <textarea name="message" placeholder="메시지" required></textarea><br>
-    <button type="submit">보내기</button>
-    <button type="button" id="discordButton" style="margin-left: 1rem; background: #7289da;">📩 디스코드로 보내기</button>
-  </form>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDIJqcl2HRdQqtiyHZMxZo0cr9lEFLokqk",
-      authDomain: "final-portfolio-f6616.firebaseapp.com",
-      projectId: "final-portfolio-f6616",
-      storageBucket: "final-portfolio-f6616.firebasestorage.app",
-      messagingSenderId: "1057713911372",
-      appId: "1:1057713911372:web:35ccbdb524b00ac37e66e9",
-      measurementId: "G-3ZHMRF1PZR"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    const form = document.getElementById("contactForm");
-    const discordButton = document.getElementById("discordButton");
-
-    async function handleSubmit(sendToDiscord = false) {
-      const name = form.name.value;
-      const email = form.email.value;
-      const message = form.message.value;
-
-      try {
-        await addDoc(collection(db, "messages"), {
-          name,
-          email,
-          message,
-          timestamp: new Date()
-        });
-
-        if (sendToDiscord) {
-          await fetch("https://discord.com/api/webhooks/1374454273185808395/rZDW9lU3B7Tutw01YWIJLIQSrVtKpxtd3RHK1E7a-zWj8ja17L_5yHhl52BSMKMKlDQD", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              content: `📨 [Portfolio Contact]\n이름: ${name}\n이메일: ${email}\n메시지: ${message}`
-            })
-          });
-          alert("디스코드로 메시지가 전송되었습니다!");
-        } else {
-          alert("메시지가 Firebase에 전송되었습니다!");
-        }
-
-        form.reset();
-      } catch (err) {
-        console.error("전송 오류:", err);
-        alert("전송에 실패했습니다.");
-      }
-    }
-
-    // 기본 submit (Firebase만)
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      await handleSubmit(false);
-    });
-
-    // 디스코드 전송 버튼 클릭 시 (Firebase + Discord)
-    discordButton.addEventListener("click", async () => {
-      await handleSubmit(true);
-    });
-  </script>
-    </div>
   </div>
 </body>
 </html>
