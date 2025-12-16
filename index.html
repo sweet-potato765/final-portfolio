@@ -97,17 +97,50 @@
       font-size: 14px;
       color: #888;
     }
-  </style>
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+header h1 {
+font-size: 30px;
+}
+
+
+header p {
+font-size: 16px;
+}
+
+
+.projects {
+grid-template-columns: 1fr;
+gap: 30px;
+}
+
+
+.card {
+padding: 24px;
+}
+
+
+.card h2 {
+font-size: 24px;
+}
+
+
+.card img {
+width: 180px;
+}
+}
+</style>
 </head>
 
 <body>
   <div class="container">
 
     <!-- 헤더 -->
-    <header>
-      <h1>김은석</h1>
-      <p>Flutter · Firebase 기반 앱 개발자 포트폴리오</p>
-    </header>
+   <header>
+    <img src="robot.png" alt="Profile Robot" style="width:120px; margin-bottom:20px;" />
+    <h1>김은석</h1>
+    <p>Flutter · Firebase 기반 앱 개발자 포트폴리오</p>
+  </header>
 
     <!-- 프로젝트 섹션 -->
     <h2 style="font-size:32px; margin-bottom:30px;">팀 / 실사용 프로젝트</h2>
@@ -128,9 +161,6 @@
         <div class="stack">Flutter · Firebase · Web</div>
         <a class="button" href="https://tangerine-chebakia-2bee1c.netlify.app/" target="_blank">사이트 바로가기</a>
       </div>
-
-      <!-- 개인 프로젝트 섹션 제목 -->
-    <h2 style="font-size:32px; margin:80px 0 30px;">개인 프로젝트</h2>
 
       <!-- Re: Memory 카드 -->
       <div class="card">
